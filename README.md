@@ -1,7 +1,8 @@
 
 # Desafio Quiz - Clean Code e Clean Architecture
 
-Um desafio de estudo para juniors de um projeto .NET seguindo conceitos de Clean Architecture e Clean Code. 
+Um desafio de estudo de um projeto básico em .NET seguindo conceitos de Clean Architecture e Clean Code.
+
 ## Descrição do desafio
 
 `Objetivo:` Desenvolver e reforçar conhecimentos de Arquitetura, POO, Design Patterns, Clean Code, SOLID e .NET 8.
