@@ -5,13 +5,13 @@ using Persistence.Context;
 
 namespace Persistence.Repositories;
 
-public class UserRepository : BaseRepository<User>, IUserRepository
+public class UserRepository : BaseRepository<Users>, IUserRepository
 {
     public UserRepository(AppDbContext context) : base(context)
     {}
 
-    public async Task<User> GetByEmail(string email, CancellationToken cancellationToken)
+    public async Task<Users> GetByEmail(string username, CancellationToken cancellationToken)
     {
-        return await Context.Users.FirstOrDefaultAsync(x => x.Email == email, cancellationToken);
+        return await Context.Users.FirstOrDefaultAsync(x => x.Username == username, cancellationToken);
     }
 }

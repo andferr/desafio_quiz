@@ -7,6 +7,6 @@ public sealed class GetAllUserMapper : Profile
 {
     public GetAllUserMapper()
     {
-        CreateMap<User, GetAllUserResponse>();
+        CreateMap<Users, GetAllUserResponse>();
     }
 }

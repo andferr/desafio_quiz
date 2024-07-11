@@ -14,28 +14,28 @@ public class BaseRepository<T> : IBaseRepository<T> where T : BaseEntity
         Context = context;
     }
 
-    public void Create(T entity)
+    public void Create(T entity, CancellationToken cancellationToken)
     {
-        entity.DateCreated = DateTimeOffset.UtcNow;
+        entity.CreatedAt = DateTimeOffset.UtcNow;
         Context.Add(entity);
         Context.SaveChanges();
     }
 
-    public void Update(T entity)
+    public void Update(T entity, CancellationToken cancellationToken)
     {
-        entity.DateUpdated = DateTimeOffset.UtcNow;
+        entity.UpdatedAt = DateTimeOffset.UtcNow;
         Context.Update(entity);
         Context.SaveChanges();
     }
 
-    public void Delete(T entity)
+    public void Delete(T entity, CancellationToken cancellationToken)
     {
-        entity.DateDeleted = DateTimeOffset.UtcNow;
+        entity.UpdatedAt = DateTimeOffset.UtcNow;
         Context.Remove(entity);
         Context.SaveChanges();
     }
 
-    public async Task<T> Get(Guid id, CancellationToken cancellationToken)
+    public async Task<T> Get(int id, CancellationToken cancellationToken)
     {
         return await Context.Set<T>().FirstOrDefaultAsync(x => x.Id == id, cancellationToken);
     }

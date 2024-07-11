@@ -1,6 +1,6 @@
-﻿namespace Application.UseCases.GetAllUser;
+﻿namespace Application.UseCases.UpdateUser;
 
-public sealed record GetAllUserResponse
+public sealed record UpdateUserResponse
 {
     public int Id { get; set; }
     public string? Username { get; set; }

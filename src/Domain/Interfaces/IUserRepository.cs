@@ -2,7 +2,7 @@
 
 namespace Domain.Interfaces;
 
-public interface IUserRepository : IBaseRepository<User>
+public interface IUserRepository : IBaseRepository<Users>
 {
-    Task<User> GetByEmail(string email, CancellationToken cancellationToken);
+    Task<Users> GetByEmail(string username, CancellationToken cancellationToken);
 }

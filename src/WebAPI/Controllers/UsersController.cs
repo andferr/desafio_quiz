@@ -33,7 +33,7 @@ public class UsersController : ControllerBase
 
     [HttpPut("{id}")]
     public async Task<ActionResult<UpdateUserResponse>>
-        Update(Guid id, UpdateUserRequest request, CancellationToken cancellationToken)
+        Update(int id, UpdateUserRequest request, CancellationToken cancellationToken)
     {
         if (id != request.Id)
             return BadRequest();
@@ -43,7 +43,7 @@ public class UsersController : ControllerBase
     }
 
     [HttpDelete("{id}")]
-    public async Task<ActionResult> Delete(Guid? id,
+    public async Task<ActionResult> Delete(int? id,
                                            CancellationToken cancellationToken)
     {
         if (id is null)
